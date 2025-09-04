@@ -29,9 +29,7 @@ bypass-tun = 10.0.0.0/8, 100.64.0.0/10, 127.0.0.0/8, 169.254.0.0/16, 172.16.0.0/
 [Remote Proxy]
 
 [Remote Filter]
-
 # 严格按照您指定的 FilterKey 格式进行改写
-[Remote Filter]
 日台新美 = NameRegex, FilterKey = "^(?=.*((?i)(JP|日本|Japan|TW|台湾|台灣|Taiwan|SG|新加坡|Singapore|US|美国|美國|United States))).*$"
 香港 = NameRegex, FilterKey = "^(?=.*((?i)(HK|香港|HONG KONG))).*$"
 台湾 = NameRegex, FilterKey = "^(?=.*((?i)(TW|台湾|台灣|Taiwan))).*$"
@@ -80,6 +78,7 @@ https://rule.kelee.one/Loon/Google.lsr, policy = 全球手动策略, tag = Googl
 https://rule.kelee.one/Loon/OneDrive.lsr, policy = 全球手动策略, tag = OneDrive, enabled = true
 https://kelee.one/Tool/Loon/Lsr/LAN_SPLITTER, policy = DIRECT, tag = LAN, enabled = true
 https://kelee.one/Tool/Loon/Lsr/REGION_SPLITTER, policy = DIRECT, tag = CN REGION, enabled = true
+
 
 [Host]
 
