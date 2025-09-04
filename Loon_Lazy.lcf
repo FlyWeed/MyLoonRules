@@ -42,6 +42,8 @@ bypass-tun = 10.0.0.0/8, 100.64.0.0/10, 127.0.0.0/8, 169.254.0.0/16, 172.16.0.0/
 
 菲律宾 = NameRegex, "(?i)(PH|菲律宾|Philippines)"
 
+法国 = NameRegex, "(?i)(FR|法国|France)"
+
 
 SEA = NameRegex, "(?i)(SG|新加坡|Singapore|MY|马来西亚|大马|Malaysia|TH|泰国|Thailand|VN|越南|Vietnam|PH|菲律宾|菲|Philippines|ID|印度尼西亚|印尼|Indonesia)"
 
