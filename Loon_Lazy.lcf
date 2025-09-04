@@ -30,20 +30,20 @@ bypass-tun = 10.0.0.0/8, 100.64.0.0/10, 127.0.0.0/8, 169.254.0.0/16, 172.16.0.0/
 
 [Remote Filter]
 
-日台新美 = NameRegex, Regex = "(?i)(JP|日本|Japan|TW|台湾|台灣|Taiwan|SG|新加坡|Singapore|US|美国|美國|United States)"
+日台新美 = NameRegex, "(?i)(JP|日本|Japan|TW|台湾|台灣|Taiwan|SG|新加坡|Singapore|US|美国|美國|United States)"
 
-香港 = NameRegex, Regex = "(?i)(HK|香港|HONG KONG)"
+香港 = NameRegex, "(?i)(HK|香港|HONG KONG)"
 
-台湾 = NameRegex, Regex = "(?i)(TW|台湾|台灣|Taiwan)"
+台湾 = NameRegex, "(?i)(TW|台湾|台灣|Taiwan)"
 
-新加坡 = NameRegex, Regex = "(?i)(SG|新加坡|Singapore)"
+新加坡 = NameRegex, "(?i)(SG|新加坡|Singapore)"
 
-美国 = NameRegex, Regex = "(?i)(US|美国|美國|United States)"
+美国 = NameRegex, "(?i)(US|美国|美國|United States)"
 
-菲律宾 = NameRegex, Regex = "(?i)(PH|菲律宾|Philippines)"
+菲律宾 = NameRegex, "(?i)(PH|菲律宾|Philippines)"
 
 
-SEA = NameRegex, Regex = "(?i)(SG|新加坡|Singapore|MY|马来西亚|大马|Malaysia|TH|泰国|Thailand|VN|越南|Vietnam|PH|菲律宾|菲|Philippines|ID|印度尼西亚|印尼|Indonesia)"
+SEA = NameRegex, "(?i)(SG|新加坡|Singapore|MY|马来西亚|大马|Malaysia|TH|泰国|Thailand|VN|越南|Vietnam|PH|菲律宾|菲|Philippines|ID|印度尼西亚|印尼|Indonesia)"
 
 
 
