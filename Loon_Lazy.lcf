@@ -62,6 +62,8 @@ FINAL, 全球手动策略
 
 [Remote Rule]
 https://rule.kelee.one/Loon/Telegram.lsr, policy = 全球手动策略, tag = Telegram, enabled = true
+https://rule.kelee.one/Loon/Binance.lsr, policy = 台湾手动策略, tag = Telegram, enabled = true
+https://rule.kelee.one/Loon/OKX.lsr, policy = 台湾手动策略, tag = Telegram, enabled = true
 https://kelee.one/Tool/Loon/Lsr/TikTok.lsr, policy = 台湾手动策略, tag = TikTok, enabled = true
 https://kelee.one/Tool/Loon/Lsr/AI.lsr, policy = AI手动策略, tag = AI, enabled = true
 https://kelee.one/Tool/Loon/Lsr/AppleAccount.lsr, policy = DIRECT, tag = Apple Account, enabled = true
