@@ -43,7 +43,7 @@ SEA = NameRegex, FilterKey = "^(?=.*((?i)(SG|新加坡|Singapore|MY|马来西亚
 [Proxy Group]
 全球手动策略 = select, 香港, img-url = https://raw.githubusercontent.com/Orz-3/mini/master/Color/Global.png
 AI手动策略 = select, 美国, img-url = https://raw.githubusercontent.com/Orz-3/mini/master/Color/US.png
-台湾手动策略 = select, 美国, img-url = https://raw.githubusercontent.com/Orz-3/mini/master/Color/TW.png
+台湾手动策略 = select, 台湾, img-url = https://raw.githubusercontent.com/Orz-3/mini/master/Color/TW.png
 
 
 
