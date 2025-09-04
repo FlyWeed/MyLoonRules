@@ -1,0 +1,281 @@
+# Loon 无脑配置
+# Date: 2025-09-04 00:00:44
+
+[General]
+ip-mode = v4-only
+ipv6-vif = off
+dns-server = system
+sni-sniffing = true
+disable-stun = false
+dns-reject-mode = LoopbackIP
+domain-reject-mode = DNS
+udp-fallback-mode = REJECT
+wifi-access-http-port = 7222
+wifi-access-socks5-port = 7221
+allow-wifi-access = false
+interface-mode = auto
+test-timeout = 5
+disconnect-on-policy-change = false
+internet-test-url = http://connectivitycheck.platform.hicloud.com/generate_204
+proxy-test-url = http://www.gstatic.com/generate_204
+resource-parser = https://raw.githubusercontent.com/sub-store-org/Sub-Store/release/sub-store-parser.loon.min.js
+geoip-url = https://geodata.kelee.one/Country-Masaiki.mmdb
+ipasn-url = https://geodata.kelee.one/GeoLite2-ASN-P3TERX.mmdb
+skip-proxy = 192.168.0.0/16, 10.0.0.0/8, 172.16.0.0/12, localhost, *.local, e.crashlynatics.com
+bypass-tun = 10.0.0.0/8, 100.64.0.0/10, 127.0.0.0/8, 169.254.0.0/16, 172.16.0.0/12, 192.0.0.0/24, 192.0.2.0/24, 192.88.99.0/24, 192.168.0.0/16, 198.51.100.0/24, 203.0.113.0/24, 224.0.0.0/4, 255.255.255.255/32
+
+[Proxy]
+
+[Remote Proxy]
+
+[Remote Filter]
+
+日台新美 = NameRegex, Regex = "(?i)(JP|日本|Japan|TW|台湾|台灣|Taiwan|SG|新加坡|Singapore|US|美国|美國|United States)"
+
+香港 = NameRegex, Regex = "(?i)(HK|香港|HONG KONG)"
+
+台湾 = NameRegex, Regex = "(?i)(TW|台湾|台灣|Taiwan)"
+
+新加坡 = NameRegex, Regex = "(?i)(SG|新加坡|Singapore)"
+
+美国 = NameRegex, Regex = "(?i)(US|美国|美國|United States)"
+
+菲律宾 = NameRegex, Regex = "(?i)(PH|菲律宾|Philippines)"
+
+
+SEA = NameRegex, Regex = "(?i)(SG|新加坡|Singapore|MY|马来西亚|大马|Malaysia|TH|泰国|Thailand|VN|越南|Vietnam|PH|菲律宾|菲|Philippines|ID|印度尼西亚|印尼|Indonesia)"
+
+
+
+[Proxy Group]
+全球手动策略 = select, 香港, img-url = https://raw.githubusercontent.com/Orz-3/mini/master/Color/Global.png
+AI手动策略 = select, 美国, img-url = https://raw.githubusercontent.com/Orz-3/mini/master/Color/US.png
+
+
+
+[Rule]
+# Local Rule
+# Type:DOMAIN-SUFFIX,DOMAIN,DOMAIN-KEYWORD,USER-AGENT,URL-REGEX,IP-CIDR,IP-CIDR6,IP-ASN
+# Strategy:DIRECT,Proxy,REJECT
+# Options:no-resolve(no-resolve(only for cidr))
+# IP-CIDR, 192.168.0.0/16, DIRECT
+# IP-CIDR, 10.0.0.0/8, DIRECT
+# IP-CIDR, 172.16.0.0/12, DIRECT
+# IP-CIDR, 127.0.0.0/8, DIRECT
+# 配置文件已自带远程GEOIP, cn, DIRECT规则，请勿在此添加
+# 请勿修改远程CN REGION规则的排序甚至删除
+FINAL, 全球手动策略
+
+[Remote Rule]
+https://rule.kelee.one/Loon/Telegram.lsr, policy = 全球手动策略, tag = Telegram, enabled = true
+https://kelee.one/Tool/Loon/Lsr/TikTok.lsr, policy = 全球手动策略, tag = TikTok, enabled = true
+https://kelee.one/Tool/Loon/Lsr/AI.lsr, policy = 全球手动策略, tag = AI, enabled = true
+https://kelee.one/Tool/Loon/Lsr/AppleAccount.lsr, policy = DIRECT, tag = Apple Account, enabled = true
+https://kelee.one/Tool/Loon/Lsr/AppStore.lsr, policy = DIRECT, tag = App Store, enabled = false
+https://rule.kelee.one/Loon/GitHub.lsr, policy = 全球手动策略, tag = GitHub, enabled = true
+https://rule.kelee.one/Loon/Netflix.lsr, policy = 全球手动策略, tag = Netflix, enabled = true
+https://rule.kelee.one/Loon/YouTube.lsr, policy = 全球手动策略, tag = Youtube, enabled = true
+https://rule.kelee.one/Loon/Disney.lsr, policy = 全球手动策略, tag = Disney, enabled = true
+https://rule.kelee.one/Loon/Twitter.lsr, policy = 全球手动策略, tag = Twitter, enabled = true
+https://rule.kelee.one/Loon/Facebook.lsr, policy = 全球手动策略, tag = Facebook, enabled = true
+https://rule.kelee.one/Loon/Instagram.lsr, policy = 全球手动策略, tag = Instagram, enabled = true
+https://rule.kelee.one/Loon/Spotify.lsr, policy = 全球手动策略, tag = Spotify, enabled = true
+https://rule.kelee.one/Loon/Google.lsr, policy = 全球手动策略, tag = Google, enabled = true
+https://rule.kelee.one/Loon/OneDrive.lsr, policy = 全球手动策略, tag = OneDrive, enabled = true
+https://kelee.one/Tool/Loon/Lsr/LAN_SPLITTER, policy = DIRECT, tag = LAN, enabled = true
+https://kelee.one/Tool/Loon/Lsr/REGION_SPLITTER, policy = DIRECT, tag = CN REGION, enabled = true
+
+[Host]
+
+[Rewrite]
+
+[Script]
+
+[Plugin]
+https://kelee.one/Tool/Loon/Lpx/Block_HTTPDNS.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/BlockAdvertisers.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/1.1.1.1.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/123NetWorkDisk_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/360SmartCamera_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/SafetyHome_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/555DY_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/12306_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/AppleWeatherEnhancer.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/SnowCamera_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/BoxJs.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/CCLive_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/Dlabel_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/Prevent_DNS_Leaks.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/Fileball_mount.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/FollowRSS_checkin.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/Switch_github_mirror.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/Google.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/IThome_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/Jump_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/Keep_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/KOOK_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/Line_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/QQ_Redirect.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/QQMusic_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/Reddit_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/ReelShort_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/Script-Hub.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/Soul_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/Spotify_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/Spotify_lyrics_translation.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/Sub-Store.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/TestFlightRegionUnlock.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/TubeMax_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/Uki_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/VVebo_repair.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/WARP_Node_Query.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/WPS_checkin.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/YouTube_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/YouTubeSubtitlesTranslation.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/YY_Voice_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/ZAKER_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/Aiinquiry_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/iQiYi_Video_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/AliYunDrive_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/BaiduMap_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/Baidu_input_method_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/Tieba_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/BaiduNetDisk_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/BaiduSearchWebpage_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/BabyTree_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/Beike_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/BiliComic_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/Bilibili_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/BitqiuPan_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/BodianMusic_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/BooHee_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/Cainiao_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/CaixinMedia_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/ColorfulClouds_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/ChengFenMiao_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/XFuse_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/NodeLinkCheck.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/DiDi_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/DingdongMaicai_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/DouBan_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/Douyu_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/DuiTang_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/DragonRead_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/KebidaDushu_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/FlyerTea_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/FenBi_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/FC_Box_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/RiskBird_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/GuideRank_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/Amap_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/GaoDing_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/Umetrip_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/HUPU_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/JiaKaoBaoDian_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/91160_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/SeasunJX3_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/JiaXiaoDrive_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/Node_detection_tool.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/JD_Price.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/JD_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/WPS_Documents_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/Remove_ads_by_keli.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/KuaiDi100_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/KuaiDuiZuoYe_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/QuickSearch.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/KuaiKanComic_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/KuaiShou_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/KwaiVideoeditor_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/QuarkBrowser_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/CoolApk_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/KGRing_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/KuGou_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/Kuwo_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/TV_Assistant_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/MaFengWo_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/MangoTV_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/MKZ_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/CatEarFM_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/MeiShiJie_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/MeiTu_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/MeituMYXJ_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/MeetYou_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/MojiWeather_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/MaiMai_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/DubbingShow_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/PinDuoDuo_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/PiPiXia_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/PuPuMall_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/51Job_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/AutoHome_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/QiDian_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/SevenCat_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/QtingFM_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/SodaMusic_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/QiXinBao_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/QQKSong_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/LuckinCoffee_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/YueDanBa_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/smzdm_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/ShouYinTongMerchant_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/SF-Express_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/ShuQiCenterReader_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/KingdeeMyMoney_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/Taobao_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/Tencent_Video_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/TXDocs_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/Daily_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/WaCaiJiZhang_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/NetEaseGodlike_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/NeteaseNews_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/YoudaoDict_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/MailMaster_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/NeteaseCloudMusic_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/Weibo_intl_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/Weibo_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/WPForum_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/Weixin_Official_Accounts_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/Weixin_external_links_unlock.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/WexinMiniPrograms_Remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/WutaCamera_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/XiaChuFang_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/HKDouYin_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/OraySunlogin_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/FleaMarket_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/XiaoCan_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/ShopKeeperAdmin_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/XiaoHeiHe_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/RedPaper_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/MiaoRead_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/XiaomiSpeaker_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/iMaiCai_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/CosmosPodcast_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/Himalaya_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/Snowball_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/XunLei_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/BaiduPhoto_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/VideoGo_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/Yitian_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/YoudaoTrans_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/YouKu_Video_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/Yueyou_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/SuZhouCitizenCard_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/Zhihu_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/ZhiLianZhaoPin_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/UnnooQuan_remove_watermark.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/PICC_Insurance_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/mobileClouds_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/EtouchEcalendar_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/ZhuanZhuan_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/Auto_Join_TF.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/ZongHeng_remove_ads.lpx, policy = 全球手动策略, enabled = true
+https://kelee.one/Tool/Loon/Lpx/ZuiYou_remove_ads.lpx, policy = 全球手动策略, enabled = true
+
+
+[Mitm]
+ca-p12 = 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
+ca-passphrase = Y3E096YN
+hostname =
+ca-p12 = 
+ca-passphrase = 
+skip-server-cert-verify = false
