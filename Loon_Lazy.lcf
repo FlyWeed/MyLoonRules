@@ -105,7 +105,6 @@ https://kelee.one/Tool/Loon/Lpx/Dlabel_remove_ads.lpx, policy = 全球手动策�
 https://kelee.one/Tool/Loon/Lpx/Prevent_DNS_Leaks.lpx, policy = 全球手动策略, enabled = true
 https://kelee.one/Tool/Loon/Lpx/Fileball_mount.lpx, policy = 全球手动策略, enabled = true
 https://kelee.one/Tool/Loon/Lpx/FollowRSS_checkin.lpx, policy = 全球手动策略, enabled = true
-https://kelee.one/Tool/Loon/Lpx/Switch_github_mirror.lpx, policy = 全球手动策略, enabled = true
 https://kelee.one/Tool/Loon/Lpx/Google.lpx, policy = 全球手动策略, enabled = true
 https://kelee.one/Tool/Loon/Lpx/IThome_remove_ads.lpx, policy = 全球手动策略, enabled = true
 https://kelee.one/Tool/Loon/Lpx/Jump_remove_ads.lpx, policy = 全球手动策略, enabled = true
@@ -124,9 +123,7 @@ https://kelee.one/Tool/Loon/Lpx/Sub-Store.lpx, policy = 全球手动策略, enab
 https://kelee.one/Tool/Loon/Lpx/TestFlightRegionUnlock.lpx, policy = 全球手动策略, enabled = true
 https://kelee.one/Tool/Loon/Lpx/TubeMax_remove_ads.lpx, policy = 全球手动策略, enabled = true
 https://kelee.one/Tool/Loon/Lpx/Uki_remove_ads.lpx, policy = 全球手动策略, enabled = true
-https://kelee.one/Tool/Loon/Lpx/VVebo_repair.lpx, policy = 全球手动策略, enabled = true
 https://kelee.one/Tool/Loon/Lpx/WARP_Node_Query.lpx, policy = 全球手动策略, enabled = true
-https://kelee.one/Tool/Loon/Lpx/WPS_checkin.lpx, policy = 全球手动策略, enabled = true
 https://kelee.one/Tool/Loon/Lpx/YouTube_remove_ads.lpx, policy = 全球手动策略, enabled = true
 https://kelee.one/Tool/Loon/Lpx/YouTubeSubtitlesTranslation.lpx, policy = 全球手动策略, enabled = true
 https://kelee.one/Tool/Loon/Lpx/YY_Voice_remove_ads.lpx, policy = 全球手动策略, enabled = true
@@ -160,7 +157,6 @@ https://kelee.one/Tool/Loon/Lpx/DragonRead_remove_ads.lpx, policy = 全球手动
 https://kelee.one/Tool/Loon/Lpx/KebidaDushu_remove_ads.lpx, policy = 全球手动策略, enabled = true
 https://kelee.one/Tool/Loon/Lpx/FlyerTea_remove_ads.lpx, policy = 全球手动策略, enabled = true
 https://kelee.one/Tool/Loon/Lpx/FenBi_remove_ads.lpx, policy = 全球手动策略, enabled = true
-https://kelee.one/Tool/Loon/Lpx/FC_Box_remove_ads.lpx, policy = 全球手动策略, enabled = true
 https://kelee.one/Tool/Loon/Lpx/RiskBird_remove_ads.lpx, policy = 全球手动策略, enabled = true
 https://kelee.one/Tool/Loon/Lpx/GuideRank_remove_ads.lpx, policy = 全球手动策略, enabled = true
 https://kelee.one/Tool/Loon/Lpx/Amap_remove_ads.lpx, policy = 全球手动策略, enabled = true
@@ -268,9 +264,7 @@ https://kelee.one/Tool/Loon/Lpx/iReaderDejian_remove_ads.lpx, policy = 全球手
 https://raw.githubusercontent.com/FlyWeed/Loon/refs/heads/main/Plugin/NodeSeek.lpx, policy = 全球手动策略, enabled = true
 https://raw.githubusercontent.com/FlyWeed/Loon/refs/heads/main/Plugin/ChinaMobile.lpx, policy = 全球手动策略, enabled = true
 https://raw.githubusercontent.com/FlyWeed/Loon/refs/heads/main/Plugin/CookieTask.lpx, policy = 全球手动策略, enabled = true
-https://raw.githubusercontent.com/FlyWeed/Loon/refs/heads/main/Plugin/CMS_Adblock.lpx, policy = 全球手动策略, enabled = true
 https://raw.githubusercontent.com/FlyWeed/Loon/refs/heads/main/Plugin/BaiduNetDisk.lpx, policy = 全球手动策略, enabled = true
-https://raw.githubusercontent.com/FlyWeed/Loon/refs/heads/main/Plugin/AppRaven.lpx, policy = 全球手动策略, enabled = true
 https://raw.githubusercontent.com/FlyWeed/Loon/refs/heads/main/Plugin/XPTV.lpx, policy = 全球手动策略, enabled = true
 
 
