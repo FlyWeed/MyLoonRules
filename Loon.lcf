@@ -71,7 +71,6 @@ iosapps.itunes.apple.com = iosapps.itunes.apple.com.download.ks-cdn.com
 新加坡 = NameRegex, FilterKey = "^(?=.*((?i)(SG|新加坡|Singapore))).*$"
 美国 = NameRegex, FilterKey = "^(?=.*((?i)(US|美国|美國|United States))).*$"
 加拿大 = NameRegex, FilterKey = "^(?=.*((?i)(CA|CAN|Canada|加拿大|Toronto|多伦多|多倫多|Vancouver|温哥华|溫哥華|Montreal|蒙特利尔|蒙特利爾))).*$"
-印度 = NameRegex, FilterKey = "^(?=.*((?i)(India|印度|Mumbai|孟买|孟買|Delhi|新德里|Bengaluru|Bangalore|班加罗尔|班加羅爾|Chennai|Madras))).*$"
 菲律宾 = NameRegex, FilterKey = "^(?=.*((?i)(PH|菲律宾|Philippines))).*$"
 SEA = NameRegex, FilterKey = "^(?=.*((?i)(SG|新加坡|Singapore|MY|马来西亚|大马|Malaysia|TH|泰国|Thailand|VN|越南|Vietnam|PH|菲律宾|菲|Philippines|ID|印度尼西亚|印尼|Indonesia|KH|Cambodia|柬埔寨|LA|Laos|老挝|老撾|MM|Myanmar|缅甸|BN|Brunei|文莱|TL|Timor|东帝汶|東帝汶))).*$"
 欧洲主流 = NameRegex, FilterKey = "^(?=.*((?i)(DE|Germany|德国|德國|FR|France|法国|法國|IT|Italy|意大利|ES|Spain|España|西班牙|NL|Netherlands|Holland|荷兰|荷蘭|BE|Belgium|比利时|比利時|CH|Switzerland|瑞士|AT|Austria|奥地利|Sweden|瑞典|NO|Norway|挪威|DK|Denmark|丹麦|丹麥|FI|Finland|芬兰|芬蘭|Ireland|爱尔兰|愛爾蘭|PT|Portugal|葡萄牙|GR|Greece|希腊|希臘|Poland|波兰|波蘭|CZ|Czech|Czechia|捷克|HU|Hungary|匈牙利))).*$"
@@ -86,7 +85,7 @@ SEA = NameRegex, FilterKey = "^(?=.*((?i)(SG|新加坡|Singapore|MY|马来西亚
 英国手动策略 = url-test, 英国, img-url = https://raw.githubusercontent.com/Orz-3/mini/master/Color/UK.png
 加拿大手动策略 = url-test, 加拿大, img-url = https://raw.githubusercontent.com/Orz-3/mini/master/Color/CA.png
 新加坡手动策略 = url-test, 新加坡, img-url = https://raw.githubusercontent.com/Orz-3/mini/master/Color/SG.png
-菲律宾手动策略 = url-test, 新加坡, img-url = https://raw.githubusercontent.com/Orz-3/mini/master/Color/Spotify.png
+菲律宾手动策略 = url-test, 菲律宾, img-url = https://raw.githubusercontent.com/Orz-3/mini/master/Color/Spotify.png
 
 
 
