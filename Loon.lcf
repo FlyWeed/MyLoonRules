@@ -129,9 +129,6 @@ https://kelee.one/Tool/Loon/Lsr/REGION_SPLITTER, policy = DIRECT, tag = CN REGIO
 https://github.com/fmz200/wool_scripts/raw/main/Loon/rule/apple_update.list, policy=REJECT, tag=苹果屏蔽系统更新, enabled=true
 
 
-
-[Host]
-
 [Rewrite]
 
 [Script]
