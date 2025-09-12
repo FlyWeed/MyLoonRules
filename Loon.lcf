@@ -310,6 +310,16 @@ https://raw.githubusercontent.com/FlyWeed/Loon/refs/heads/main/Plugin/ChinaMobil
 https://raw.githubusercontent.com/FlyWeed/Loon/refs/heads/main/Plugin/CookieTask.lpx, policy = 全球手动策略, enabled = true
 https://raw.githubusercontent.com/FlyWeed/Loon/refs/heads/main/Plugin/BaiduNetDisk.lpx, policy = 全球手动策略, enabled = true
 https://raw.githubusercontent.com/FlyWeed/Loon/refs/heads/main/Plugin/XPTV.lpx, policy = 全球手动策略, enabled = true
+https://raw.githubusercontent.com/FlyWeed/Loon/refs/heads/main/Plugin/Telegram.lpx, policy = 全球手动策略, enabled = true
+https://raw.githubusercontent.com/FlyWeed/Loon/refs/heads/main/Plugin/WebPage.lpx, policy = 全球手动策略, enabled = true
+https://raw.githubusercontent.com/FlyWeed/Loon/refs/heads/main/Plugin/iTunes.lpx, policy = 全球手动策略, enabled = true
+https://raw.githubusercontent.com/FlyWeed/Loon/refs/heads/main/Plugin/StartUpAds.lpx, policy = 全球手动策略, enabled = true
+https://raw.githubusercontent.com/FlyWeed/Loon/refs/heads/main/Plugin/skip-proxy.lpx, policy = 全球手动策略, enabled = true
+https://raw.githubusercontent.com/FlyWeed/Loon/refs/heads/main/Plugin/RedNote.lpx, policy = 全球手动策略, enabled = true
+
+
+
+
 
 
 
